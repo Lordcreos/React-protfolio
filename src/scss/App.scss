@@ -56,9 +56,8 @@ textarea{
     margin-top: 1rem;
     padding:1rem;
     position: relative;
-    height: 90vh;
+    height: 100vh;
     .landing-left-section{
-        min-height: 500px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -271,9 +270,8 @@ textarea{
 //-----------------contact page---------------
 .contact-page{
     min-height: 50vh;
-    grid-template-columns: 1fr;
     section{
-        .left-side{
+        .contact-content{
            p{
                margin-top: .7rem;
                opacity: .8;

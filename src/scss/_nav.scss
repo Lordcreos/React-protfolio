@@ -73,47 +73,5 @@ input[type=checkbox]{
 }
 
 
-.hamburger-menu-button {
-  position: relative;
-  width: var(--width);
-  height: var(--width);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 50;
-  transition: all .5s ease;
-}
 
-.hamburger-menu,
-.hamburger-menu::after {
-  height: calc(0.125 * var(--width));
-  border-radius: calc(0.15 * var(--width));;
-  background-color: $primary-color;
-  transition: all 0.25s ease-in-out;
-}
-
-.hamburger-menu {
-  width: calc(0.75 * var(--width));
-  transform: translateY(calc(-0.125 * var(--width)));
-}
-
-.hamburger-menu::after {
-  position: absolute;
-  width: calc(0.375 * var(--width));
-  transform: translateY(calc(0.25 * var(--width)));
-  content: '';
-}
-
-.open {
-  transform: translateY(0px) rotate(45deg);
-  background-color: $light-color;
-}
-
-.open::after {
-  width: calc(0.75 * var(--width));
-  transform: translateY(0px) rotate(-90deg);
-  background-color: $light-color;
-
-}
 
