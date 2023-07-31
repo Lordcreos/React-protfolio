@@ -1,0 +1,348 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// variables import
+@import "./variable";
+
+h1,h2,h3,h4,h5{
+    font-family: 'Roboto', sans-serif;
+}
+
+p{
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    background: $dark-color;
+}
+
+input,textarea{
+    border:none;
+    outline:none;
+}
+
+textarea{
+    resize: none;
+}
+.logo{
+    font-family: 'Lilita One', cursive;
+    color:$primary-color;
+    text-shadow: -2px 2px $black;
+    font-size: 3rem;
+    padding: 0;
+}
+
+.App{
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    background:$dark-color;
+    color:$light-color;
+    overflow: hidden;
+}
+
+.home-page,.about-page,.contact-page,.project-page{
+    overflow: hidden;
+}
+
+// --------------------home-page-----------------------
+
+.home-page{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+    padding:1rem;
+    position: relative;
+    height: 90vh;
+    .landing-left-section{
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        z-index: 5;
+
+        .text{
+
+            color:$light-color;
+            h1,p{
+                letter-spacing: 3px;
+            }
+            h1,.logo{
+                font-size:2.5rem;
+            }
+            p{
+                margin-top:1rem;
+                font-size: .9rem;
+            }
+
+            span{
+                position: relative;
+                display: inline-block;
+                cursor: default;
+            }
+        }
+
+        .action-buttons{
+            margin-top:1.4rem;
+            button{
+                height: 4em;
+                width: 10em;
+            }
+
+            button:last-child{
+                margin-left:1rem;
+            }
+        }
+    }
+
+
+    .social-links{
+        position: absolute;
+        right:1rem;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        z-index: 10;
+        // justify-content: space-between;
+
+        svg{
+            height: 2rem;
+            margin: 1rem .5rem;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .vertical-line{
+            height: 30px;
+            width: 2px;
+            background-color: $light-color;
+        }
+    }
+}
+
+//----------------------project page-------------------
+.project-page,.about-page,.contact-page{
+    min-height: 100vh;
+    padding: 2rem 0; 
+    position: relative;  
+    z-index: 5;
+    section{
+        margin-top:1rem;
+        display: grid;
+        padding: 0 1rem;
+    }
+}
+
+.project-page{
+
+    section{
+        grid-template-columns: 1fr;
+        gap:1rem 0;
+
+        .project-card{
+            height: 350px;
+            width: 100%;
+            background-color: rgba($color: $black, $alpha: 0.2);
+            overflow: hidden;
+            position: relative;
+            border-radius: 6px;
+
+            .hero{
+                // width: 100%;
+                // height: 100%;
+                object-fit: contain;
+
+            }
+            .card-overlay{
+                position: absolute;
+                display: grid;
+                place-items: center;
+                height: 50%;
+                width: 100%;
+                background-color: darken($color: $light-color, $amount: 10);
+                z-index: 1;
+                transition: all 1s ease 
+                
+            }
+            
+            .card-overlay.top{
+                top:-100%;
+                border-bottom-left-radius: 200%;
+                border-bottom-right-radius: 200%;
+            }
+            .card-overlay.bottom{
+                bottom:-100%;
+                border-top-left-radius: 200%;
+                border-top-right-radius: 200%;
+                button{
+                    margin: 0 1rem;
+                   
+                }
+                button.outlined-primary{
+                    color:$black;
+                }
+            }
+
+            &:hover,&:focus{
+                transition: all .5s ease-in;
+                cursor: pointer;
+                .card-overlay.top{
+                    top:0;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+                .card-overlay.bottom{
+                    bottom:0;
+                    border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                }
+            }
+            
+        }
+    }
+}
+
+
+//------------------- about page ------------------------
+
+.about-page{
+    section{
+        .profile-pic{
+            justify-self: center;
+            height: 14rem;
+            width: 14rem;
+            overflow: hidden;
+            border-radius: 50%;
+            object-fit: fill;
+        }
+
+        .description{
+            margin-top: 1rem;
+            .bio{
+                display: grid;
+                div{
+                    margin: .5rem 0;
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: space-between
+                }
+            }
+        }
+
+        .container-skills{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem 0;
+            width: 100%;
+            .skills-container{
+                margin-top: 1rem;
+                width: 100%;
+                .skill-type{
+                    position: relative;
+                 &::before{
+                     content: "";
+                     position: absolute;
+                     height: 3px;
+                     width: 30px;
+                     bottom: -3%;
+                     background: $primary-color;
+                 }
+                }
+                ul{
+                    margin-top: .5rem;
+                    li{
+                        margin-top: 0.3rem;
+                        font-family: "Nunito",sans-serif;
+                    }
+                }
+            }
+        }
+
+     
+    }
+}
+
+//-----------------contact page---------------
+.contact-page{
+    min-height: 50vh;
+    grid-template-columns: 1fr;
+    section{
+        .left-side{
+           p{
+               margin-top: .7rem;
+               opacity: .8;
+           }
+
+           .social-links{
+           
+            right:1rem;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            z-index: 10;
+            // justify-content: space-between;
+        
+            svg{
+                height: 2rem;
+                margin: 1rem .5rem;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            .vertical-line{
+                width: 30px;
+                height: 2px;
+                background-color: $light-color;
+            }
+        }
+        }
+        .right-side{
+            margin-top:1rem;
+            form{
+                .feild{
+                    display:flex;
+                    flex-direction: column;
+                    margin-bottom: 0.6rem;
+                    label{
+                        color:$light-color;
+                        opacity: .8;
+                    }
+                    input,textarea{
+                        background: darken($dark-color,2);
+                        font-size: 1.2rem;
+                        font-family: "Nunito",sans-serif;
+                        padding:0.4rem 0.3rem;
+                        color:$white;
+                        margin-top: 3px;
+                        border-radius: 6px;
+                        transition:border 1s ease;
+                        &:focus,&:hover{
+                            border: 1px solid $light-color;
+                        }
+                    }
+                    textarea{
+                        font-size: 1rem;
+                    }
+                }
+                .submit-btn{
+                    margin-top: 1rem;
+                    width: 100%;
+                    border-radius: 6px
+                }
+            }
+        }
+    }
+}
+
+//imports
+@import "./nav";
+@import "./utilities";
+@import "./backgroundAnimation";
+@import "./responsive";
