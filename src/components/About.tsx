@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { pageVariants, pageTransition } from "../App";
 
-import Experience, { IExperience } from "../utils/Experience";
+import ExperiencesList, { ExperienceArray } from "../utils/Experience";
 import PageHeading from "../utils/PageHeading";
 import ProfilePic from "../utils/profile.jpg";
 import SkillsContainer from "../utils/SkillsContainer";
@@ -20,31 +20,77 @@ function myAge(dateString: string) {
 }
 
 const frontEndSkills: Array<string> = [
-    "HTML,Css,JS", "Typescript", "React.js", "Redux", "Scss", "React Bootstrap", "Framer Motion"
+    "HTML,Css,JS", "Typescript", "React.js", "Redux", "Scss", "React Bootstrap", "Framer Motion", "Material UI", "Styled Components", "Next.js ", "Tailwind CSS"
 ]
 const backEndSkills: Array<string> = [
     "Nodejs", "Typescript", "Expressjs", "Mongo DB", "REST APIs", "Graphql"
 ]
 const toolsUsed: Array<string> = [
-    "NPM and Yarn", "Git", "Figma"
+    "NPM and Yarn", "Git", "Figma", "VS Code", "Postman", "Netlify", "Azure"
 ]
 const otherSkills: Array<string> = [
-    "Mobile First design"
+    "Mobile First design", "Responsive Web Design", "SEO", "Agile Methodology", "Scrum", "Jira"
 ]
 
-// const experience: IExperience = {
-//     companyName: "Csyrus Techologies Pvt Ltd, Bangalore",
-//     experience: "8 months",
-//     list: [
-//         "Supporting development, maintaining, and updating websites",
-//         "Assisting in deployment of websites",
-//         "Writing codes for web based solutions",
-//         "Creating new web-based tools",
-//         "Resolving complaints of customers and responding to their suggestions to improve the products"
+const experienceArray = [
+    {
+        company: "Pickatale (Part Time)",
+        experience: "Mar. 2023 - present",
+        list: [
+            "Architected scalable front-end in React and back-end in Node.js and MongoDB",
+            "Implemented new features in the online book creation platform used by 50k+ customers",
+            "Fixed critical bugs in the production environment through diligent debugging"
+        ],
+        designation: "Full Stack Developer"
+    },
+    {
+        company: "Kruger Corp (Part Time)",
+        experience: "Jun, 2022 - May, 2023",
+        list: [
+            "Incorporated third-party APIs into the web application for data exchange and real-time updates",
+            "Wrote unit tests for components using Jest  to ensure code quality and reliability",
+            "Developed an interactive data visualization dashboard using React,js and Tailwind to display real-time data",
+            "Developed a custom UI library that increased developer productivity and code reuse",
+            "Implemented a single-page application using React and Redux that improved overall performance and usability"
+        ],
+        designation: "Full Stack Developer"
+    },
+    {
+        company: "Jalasoft",
+        experience: "Aug. 2021 - Jan. 2023",
+        list: [
+            "Developed and shipped new video interviewing product feature used by 100+ clients",
+            "Debugged integration issues between front-end, APIs and third-party tools",
+            "Documented complex workflows with clear diagrams and step-by-step instructions"
+        ],
+        designation: "Full Stack Developer"
+    },
+    {
+        company: "STB Technology",
+        experience: "Dec. 2019 - Nov. 2020",
+        list: [
+            "Created responsive interfaces and redesigned company homepage",
+            "Coordinated usability testing and bug fixes",
+            "Proficient in JavaScript, React",
+            "Managed project and web strategy planning",
+            "Built reusable code to minimize costs"
+        ],
+        designation: "Frontend Developer"
+    },
+    {
+        company: "ORESA IMAGINATION",
+        experience: "Apr. 2018 - Apr. 2019",
+        list: [
+            "Contributed to back-end APIs and experience",
+            "Developed e-commerce and inventory management systems",
+            "Conferred with front-end developers on algorithms and flowcharts",
+            "Wrote clean code for functional, sustainable web applications",
+            "Upgraded interfaces and improved performance of existing software"
+        ],
+        designation: "Backend Developer"
+    }
+];
 
-//     ],
-//     designation: "Frontend Developer"
-// }
 
 const About = () => {
 
@@ -68,7 +114,7 @@ const About = () => {
                 <div className="description">
                     <div className="job-title">
                         <h2 className="text-primary">
-                            MERN Stack Developer
+                           FullStack Developer
                     </h2>
                     </div>
                     <div className="bio">
@@ -121,15 +167,8 @@ const About = () => {
                                     d="M0 3L985 2.99991" stroke="#efefef" strokeWidth="2" />
                             </svg>
                         </div>
-
-                        {/* <div className="container-experience">
-                            {
-                                experiences.map((experience: IExperience) => (
-                                    <Experience key={experience.company} company={experience.company} experience={experience.experience} list={experience.list} designation={experience.designation} />
-
-                                ))
-                            }
-                        </div> */}
+                        
+                        <ExperiencesList experiences = {experienceArray}/>
 
 
 

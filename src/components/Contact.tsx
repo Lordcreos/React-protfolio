@@ -20,15 +20,15 @@ const Contact = () => {
             className="contact-page" id="contact">
             <PageHeading heading="Contact" />
             <section>
-                <div className="left-side">
+                <div className="contact-content">
                     <h2 className="text-primary">Let's Connect</h2>
                     <p>Have a cool idea for your project? Need reliable partner to improve your product? I am here to help you uncomplicate your product development. </p>
                     <SocailLinks />
                 </div>
-                <div className="right-side">
+                {/* <div className="right-side">
 
 
-                    {/* <form name="contact" method="post" >
+                    <form name="contact" method="post" >
                         <input type="hidden" name="form-name" value="contact" />
                         <div className="feild">
                             <label htmlFor="name">Your Name</label>
@@ -43,8 +43,8 @@ const Contact = () => {
                             <textarea name="message" id="message" placeholder="Enter your message" required />
                         </div>
                         <button type="submit" className="btn primary submit-btn">Submit</button>
-                    </form> */}
-                </div>
+                    </form>
+                </div> */}
             </section>
 
         </motion.div>

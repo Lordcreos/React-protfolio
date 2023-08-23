@@ -31,14 +31,29 @@ const menuStyles: React.CSSProperties = {
 
 }
 
+// const navLinks: INavLink[] = [
+//     {
+//         title: "Home",
+//         path: "/"
+//     },
+//     {
+//         title: "Projects",
+//         path: "/project"
+//     },
+//     {
+//         title: "About",
+//         path: "/about"
+//     },
+//     {
+//         title: "Contact",
+//         path: "/contact"
+//     },
+// ]
+
 const navLinks: INavLink[] = [
     {
         title: "Home",
         path: "/"
-    },
-    {
-        title: "Projects",
-        path: "/project"
     },
     {
         title: "About",
