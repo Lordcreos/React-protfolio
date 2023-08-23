@@ -13,7 +13,7 @@ p {
 }
 
 body {
-  background: #00b4c3;
+  background: #0d818b;
 }
 
 input, textarea {
@@ -38,7 +38,7 @@ textarea {
   width: 100%;
   max-width: 1360px;
   margin: 0 auto;
-  background: #00b4c3;
+  background: #0d818b;
   color: #E5E5E5;
   overflow: hidden;
 }
@@ -411,7 +411,7 @@ img {
 }
 .btn:hover {
   cursor: pointer;
-  color: #00b4c3;
+  color: #0d818b;
 }
 .btn:hover::before {
   top: 0;
@@ -563,8 +563,8 @@ img {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: -webkit-linear-gradient(#00b4c3, #000);
-  background: linear-gradient(#000, #00b4c3);
+  background: -webkit-linear-gradient(#0d818b, #000);
+  background: linear-gradient(#000, #0d818b);
 }
 
 @media all and (min-width: 650px) {
