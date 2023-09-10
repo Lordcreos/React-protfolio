@@ -18,7 +18,7 @@ const Home: React.FC<Props> = ({ resumeUrl }) => {
   const line1 = "Hi,";
   const line2 = "I'm Leonardo";
   const line3 = "Web Developer";
-  const line4 = "Full Stack developer | MERN stack developer";
+  const line4 = "Full Stack developer | MERN  stack developer";
 
   const textHoverVariants: Variants = {
     visible: { y: 0, scaleY: 1 },
