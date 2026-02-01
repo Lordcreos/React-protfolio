@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+process.env.SENSITIVE_CHECK_MODE = 'last-commit';
+require('../scripts/check-sensitive');

@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über Mich",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "resume": "Lebenslauf"
+  },
+  "home": {
+    "greeting": "Hallo, ich bin",
+    "title": "Senior Full Stack Entwickler",
+    "subtitle": "Ideen in leistungsstarke digitale Erlebnisse verwandeln",
+    "description": "Ich entwickle skalierbare Webanwendungen mit den neuesten Technologien. Spezialisiert auf React, Node.js, TypeScript und MongoDB.",
+    "cta": {
+      "projects": "Projekte Ansehen",
+      "contact": "Kontakt Aufnehmen"
+    }
+  },
+  "about": {
+    "title": "Über Mich",
+    "subtitle": "Erfahren Sie mehr über meinen Hintergrund und meine Expertise",
+    "bio": {
+      "title": "Wer Ich Bin",
+      "description": "Senior Full Stack Entwickler mit über 8 Jahren Erfahrung in der Entwicklung hochwertiger Webanwendungen. Ich spezialisiere mich auf die Erstellung skalierbarer, wartbarer Lösungen mit modernen Technologien."
+    },
+    "experience": {
+      "title": "Berufserfahrung",
+      "years": "Jahre"
+    },
+    "skills": {
+      "title": "Technische Fähigkeiten",
+      "frontend": "Frontend-Entwicklung",
+      "backend": "Backend-Entwicklung",
+      "tools": "Tools & Technologien",
+      "other": "Weitere Fähigkeiten"
+    }
+  },
+  "projects": {
+    "title": "Ausgewählte Projekte",
+    "subtitle": "Einige meiner jüngsten Arbeiten und persönlichen Projekte",
+    "filter": {
+      "all": "Alle Projekte",
+      "featured": "Hervorgehoben"
+    },
+    "buttons": {
+      "viewLive": "Live Ansehen",
+      "viewCode": "Code Ansehen"
+    },
+    "technologies": "Technologien",
+    "loading": "Projekte werden geladen...",
+    "noProjects": "Keine Projekte zum Anzeigen"
+  },
+  "contact": {
+    "title": "Kontakt Aufnehmen",
+    "subtitle": "Haben Sie ein Projekt im Kopf oder möchten Sie zusammenarbeiten?",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Ihr Name",
+      "email": "E-Mail",
+      "emailPlaceholder": "ihre.email@beispiel.de",
+      "message": "Nachricht",
+      "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt...",
+      "submit": "Nachricht Senden",
+      "sending": "Wird gesendet...",
+      "success": "Nachricht erfolgreich gesendet!",
+      "error": "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut."
+    },
+    "info": {
+      "title": "Kontaktinformationen",
+      "email": "E-Mail",
+      "location": "Standort",
+      "social": "Soziale Medien"
+    }
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten",
+    "designed": "Entworfen & Entwickelt von"
+  },
+  "notFound": {
+    "label": "Seite nicht gefunden",
+    "title": "Ups, diese Route existiert nicht",
+    "description": "Die gesuchte Seite wurde möglicherweise verschoben oder entfernt. Zur Startseite zurückkehren oder mich kontaktieren.",
+    "ctaHome": "Zur Startseite",
+    "ctaContact": "Kontakt aufnehmen"
+  }
+}

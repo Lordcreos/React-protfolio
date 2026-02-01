@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Leonardo Sanchez - Senior Full Stack Developer Portfolio
 
-## Getting Started
+Un portafolio profesional moderno construido con Next.js 16, React 19, TypeScript, Tailwind CSS 4, Framer Motion y MongoDB.
 
-First, run the development server:
+## 🚀 Características
+
+- ✨ **Diseño Moderno**: Interfaz profesional con animaciones fluidas usando Framer Motion
+- 🎨 **Tailwind CSS 4**: Estilos modernos con utilidades personalizadas
+- 📱 **Responsive**: Diseño adaptable desde móviles hasta pantallas 4K
+- ⚡ **Rendimiento Optimizado**: Next.js 16 con React 19 para máxima velocidad
+- 🗄️ **Base de Datos**: MongoDB con Prisma ORM
+- 🎭 **Animaciones**: Transiciones y efectos visuales con Framer Motion
+- 📊 **Gestión de Contenido**: Sistema de administración para proyectos y experiencias
+
+## 🛠️ Tecnologías
+
+- **Next.js 16** - Framework de React
+- **React 19** - Biblioteca de UI
+- **TypeScript** - Tipado estático
+- **Tailwind CSS 4** - Framework de utilidades CSS
+- **Framer Motion 12** - Animaciones
+- **MongoDB** - Base de datos NoSQL
+- **Prisma ORM** - ORM para TypeScript
+
+## 🚀 Inicio Rápido
 
 ```bash
+# 1. Instalar dependencias
+npm install
+
+# 2. Configurar .env
+DATABASE_URL="mongodb+srv://..."
+
+# 3. Generar Prisma client
+npm run prisma:generate
+
+# 4. Sincronizar esquema
+npm run prisma:push
+
+# 5. Poblar base de datos
+npm run seed
+
+# 6. Iniciar desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📝 Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev              # Desarrollo
+npm run build            # Build producción
+npm run start            # Servidor producción
+npm run seed             # Poblar BD
+npm run prisma:studio    # Abrir Prisma Studio
+```
 
-## Learn More
+## 📂 Estructura
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── about/          # Página sobre mí
+│   ├── contact/        # Contacto
+│   ├── projects/       # Proyectos
+│   ├── api/            # API Routes
+│   ├── globals.css     # Estilos
+│   ├── layout.tsx      # Layout
+│   └── page.tsx        # Home
+├── components/         # Componentes
+└── lib/               # Utilidades
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Personalización
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Actualizar Datos
 
-## Deploy on Vercel
+Edita `seed.ts` con tu información y ejecuta:
+```bash
+npm run seed
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Cambiar Colores
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Edita `src/app/globals.css`:
+```css
+@theme {
+  --color-primary-400: #0ee958;
+  /* ... */
+}
+```
+
+## 📱 Páginas
+
+- **/** - Página principal con hero section
+- **/about** - Sobre mí, skills y experiencia
+- **/projects** - Galería de proyectos
+- **/contact** - Formulario de contacto
+
+## 👤 Autor
+
+**Leonardo Sanchez**
+- GitHub: [@Lordcreos](https://github.com/Lordcreos)
+- LinkedIn: [leonardo-sanchez-dev](https://linkedin.com/in/leonardo-sanchez-dev)
+- Email: leonardo.sanchez.dev@gmail.com
+
+---
+
+⭐️ Si te gustó este proyecto, dale una estrella!
