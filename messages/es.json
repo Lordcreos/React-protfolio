@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "resume": "Currículum"
+  },
+  "home": {
+    "greeting": "Hola, soy",
+    "title": "Desarrollador Full Stack Senior",
+    "subtitle": "Transformando ideas en experiencias digitales potentes",
+    "description": "Construyo aplicaciones web escalables usando las últimas tecnologías. Especializado en React, Node.js, TypeScript y MongoDB.",
+    "cta": {
+      "projects": "Ver Proyectos",
+      "contact": "Contáctame"
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Conoce más sobre mi experiencia y conocimientos",
+    "bio": {
+      "title": "Quién Soy",
+      "description": "Desarrollador Full Stack Senior con más de 8 años de experiencia construyendo aplicaciones web de alta calidad. Me especializo en crear soluciones escalables y mantenibles usando tecnologías modernas."
+    },
+    "experience": {
+      "title": "Experiencia Profesional",
+      "years": "años"
+    },
+    "skills": {
+      "title": "Habilidades Técnicas",
+      "frontend": "Desarrollo Frontend",
+      "backend": "Desarrollo Backend",
+      "tools": "Herramientas y Tecnologías",
+      "other": "Otras Habilidades"
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Algunos de mis trabajos recientes y proyectos personales",
+    "filter": {
+      "all": "Todos los Proyectos",
+      "featured": "Destacados"
+    },
+    "buttons": {
+      "viewLive": "Ver Demo",
+      "viewCode": "Ver Código"
+    },
+    "technologies": "Tecnologías",
+    "loading": "Cargando proyectos...",
+    "noProjects": "No hay proyectos para mostrar"
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "¿Tienes un proyecto en mente o quieres colaborar?",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo",
+      "emailPlaceholder": "tu.correo@ejemplo.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado exitosamente!",
+      "error": "Error al enviar el mensaje. Por favor, intenta de nuevo."
+    },
+    "info": {
+      "title": "Información de Contacto",
+      "email": "Correo",
+      "location": "Ubicación",
+      "social": "Redes Sociales"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "designed": "Diseñado y Construido por"
+  },
+  "notFound": {
+    "label": "Página no encontrada",
+    "title": "Ups, esta ruta no existe",
+    "description": "La página que buscas pudo haber sido movida o eliminada. Vuelve al inicio o contáctame si necesitas ayuda.",
+    "ctaHome": "Ir al inicio",
+    "ctaContact": "Contactarme"
+  }
+}
