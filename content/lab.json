@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Autonomous Job Application Agent",
+    "meta": "2026 · In progress",
+    "body": "A 7-module multi-agent system using LangGraph for orchestration and Claude Sonnet for reasoning. Automates end-to-end applications across LinkedIn, Xing, StepStone, Indeed DE. Browser automation via Playwright, Postgres-backed state, Next.js dashboard for monitoring.",
+    "stack": [
+      "Python",
+      "LangGraph",
+      "Claude",
+      "Playwright",
+      "Postgres",
+      "Next.js"
+    ],
+    "link": null,
+    "image": null
+  },
+  {
+    "title": "AI-Powered Code Review Assistant",
+    "meta": "2025 · Internal use",
+    "body": "A GitHub Actions workflow that triggers an LLM-based code review on every PR — structured feedback on complexity, security, style. Reduced manual review overhead ~40% across a 6-engineer team. Calibrated prompts to surface real issues, not noise.",
+    "stack": [
+      "Next.js",
+      "OpenAI API",
+      "GitHub Actions"
+    ],
+    "link": null,
+    "image": null
+  },
+  {
+    "title": "New project",
+    "meta": "2026 · In progress",
+    "body": "",
+    "stack": [],
+    "link": null,
+    "image": null
+  },
+  {
+    "title": "New project",
+    "meta": "2026 · In progress",
+    "body": "",
+    "stack": [],
+    "link": null,
+    "image": null
+  },
+  {
+    "title": "New project",
+    "meta": "2026 · In progress",
+    "body": "",
+    "stack": [],
+    "link": null,
+    "image": null
+  },
+  {
+    "title": "New project",
+    "meta": "2026 · In progress",
+    "body": "",
+    "stack": [],
+    "link": null,
+    "image": null
+  },
+  {
+    "title": "New project",
+    "meta": "2026 · In progress",
+    "body": "",
+    "stack": [],
+    "link": null,
+    "image": null
+  },
+  {
+    "title": "New project",
+    "meta": "2026 · In progress",
+    "body": "",
+    "stack": [],
+    "link": null,
+    "image": null
+  }
+]

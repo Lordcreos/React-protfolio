@@ -1,0 +1,12 @@
+{
+  "email": "leonardosanchez4h@hotmail.com",
+  "location": "Berlin, DE · 52.52°N 13.40°E",
+  "timezone": "Europe/Berlin",
+  "languages": "Spanish · English C1 · Deutsch A1",
+  "social": [
+    { "label": "LinkedIn", "href": "#" },
+    { "label": "GitHub", "href": "#" },
+    { "label": "WhatsApp", "href": "https://api.whatsapp.com/send?phone=593992896292&text=Hola%20%2C%20He%20visto%20tu%20perfil%20y%20me%20gustaria%20...." }
+  ],
+  "footerBuild": "Built with Next.js, TypeScript, and ✶ a lot of judgment."
+}

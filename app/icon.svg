@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#0A0A0B"/>
+  <text
+    x="3" y="23"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-weight="300"
+    font-size="21"
+    fill="#F5F2EC"
+    letter-spacing="-0.8"
+  >LS</text>
+  <rect x="25" y="4" width="5" height="5" fill="#FF5B1F"/>
+</svg>

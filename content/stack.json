@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Frontend",
+    "items": ["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion", "React Native"]
+  },
+  {
+    "label": "AI / LLM",
+    "items": ["Claude", "OpenAI", "LangChain", "LangGraph", "Cursor", "Copilot", "Codex"]
+  },
+  {
+    "label": "Testing",
+    "items": ["Jest", "Vitest", "Playwright", "Cypress"]
+  },
+  {
+    "label": "Infra",
+    "items": ["Node.js", "Python", "GraphQL", "Postgres", "Azure", "Docker", "GitHub Actions"]
+  }
+]

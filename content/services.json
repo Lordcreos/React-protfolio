@@ -1,0 +1,23 @@
+[
+  {
+    "label": "Engagement type",
+    "title": "Frontend Engineering Retainer",
+    "body": "Embedded as a senior IC on your React/Next.js codebase. Ship features, mentor the team, raise the bar on testing and AI workflows.",
+    "priceLabel": "Hourly rate",
+    "price": "€25 – €50 / hr"
+  },
+  {
+    "label": "Fixed scope · 2 weeks",
+    "title": "AI Integration Sprint",
+    "body": "2-week focused engagement: integrate Claude/OpenAI into your product surface — chat, structured outputs, agent workflows — with senior FE judgment on UX trade-offs.",
+    "priceLabel": "Hourly rate",
+    "price": "€25 – €50 / hr"
+  },
+  {
+    "label": "Async · 2 weeks",
+    "title": "Code Review & Audit",
+    "body": "Async deep-read of your frontend codebase. Architecture, performance, AI-tooling readiness, hiring signal. Deliverable: a 20-page report with prioritized actions.",
+    "priceLabel": "Hourly rate",
+    "price": "€25 – €50 / hr"
+  }
+]

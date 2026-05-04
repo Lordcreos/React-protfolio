@@ -1,0 +1,16 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cd /d/projects/portfolio-next && node scripts/create-table\\.mjs$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd /d/projects/portfolio-next && node scripts/create-bucket\\.mjs 2>&1$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd /d/projects/portfolio-next && node -e \"\nimport \\{ readFileSync \\} from 'fs';\nconst env = Object\\.fromEntries\\(\n  readFileSync\\('\\.env\\.local','utf-8'\\)\\.split\\('\\\\n'\\)\n    \\.filter\\(l => l && !l\\.startsWith\\('#'\\) && l\\.includes\\('='\\)\\)\n    \\.map\\(l => \\[l\\.slice\\(0,l\\.indexOf\\('='\\)\\)\\.trim\\(\\), l\\.slice\\(l\\.indexOf\\('='\\)\\+1\\)\\.trim\\(\\)\\]\\)\n\\);\nconst key = env\\['SUPABASE_SERVICE_ROLE_KEY'\\];\nconst url = env\\['NEXT_PUBLIC_SUPABASE_URL'\\];\nconst pdf = readFileSync\\('public/assets/Resume-Leonardo-Sanchez \\.pdf'\\);\nfetch\\(url \\+ '/storage/v1/object/uploads/cv/resume\\.pdf', \\{\n  method: 'POST',\n  headers: \\{ apikey: key, Authorization: 'Bearer ' \\+ key, 'Content-Type': 'application/pdf', 'x-upsert': 'true' \\},\n  body: pdf\n\\}\\)\\.then\\(r => r\\.json\\(\\)\\)\\.then\\(d => console\\.log\\(JSON\\.stringify\\(d\\)\\)\\);\n\" --input-type=module 2>&1$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

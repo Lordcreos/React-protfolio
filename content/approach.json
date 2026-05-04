@@ -1,0 +1,20 @@
+{
+  "headline": "Judgment over velocity.\nVelocity <em>with</em> AI.",
+  "principles": [
+    {
+      "n": "01",
+      "t": "AI accelerates, humans decide.",
+      "b": "Cursor and Copilot scaffold; I review every diff with the same scrutiny I'd give a junior's PR. AI-generated tests get the same critique as the production code they cover."
+    },
+    {
+      "n": "02",
+      "t": "Specificity beats abstraction.",
+      "b": "The best component is one that solves a real, narrow problem well — not the one that anticipates ten unwritten ones. Premature flexibility is the most expensive mistake in frontend codebases."
+    },
+    {
+      "n": "03",
+      "t": "Calm UI, loud ideas.",
+      "b": "Restraint in interface design, ambition in technical scope. The dashboard should feel boring to use; the architecture under it can be wild."
+    }
+  ]
+}

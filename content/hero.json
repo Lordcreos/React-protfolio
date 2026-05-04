@@ -1,0 +1,22 @@
+{
+  "headline": ["Shipping", "interfaces,", "orchestrating", "intelligence", "."],
+  "headlineConfig": [
+    { "t": "Shipping" },
+    { "t": "interfaces,", "br": false },
+    { "t": "orchestrating", "br": true },
+    { "t": "intelligence", "italic": true, "signal": true },
+    { "t": ".", "signal": true }
+  ],
+  "role": "Senior Frontend Engineer × AI-Augmented Delivery",
+  "location": "Berlin · 52.52°N 13.40°E",
+  "availability": "Available · Q3 2026",
+  "bio": "Senior frontend engineer with 7+ years shipping React, Next.js, and TypeScript products for finance, EdTech, and enterprise. Daily AI-assisted workflow — Cursor, Claude Code, Copilot — with senior judgment on what to accept, edit, or reject. Currently: M.Sc. in AI at GISMA + building autonomous LLM agents on the side.",
+  "metrics": [
+    { "n": "7+", "label": "years shipping" },
+    { "n": "40%", "label": "latency reduction" },
+    { "n": "50%", "label": "regression drop" },
+    { "n": "3", "label": "languages · es/en/de" }
+  ],
+  "cvUrl": "https://rijiwvdjmxrtbtqhailm.supabase.co/storage/v1/object/public/uploads/cv/resume.pdf",
+  "marqueeStack": ["React", "Next.js", "TypeScript", "LangGraph", "Claude", "Playwright", "Tailwind", "Node", "◆", "React Native", "Vitest", "GraphQL", "Cursor", "Copilot", "Postgres", "Azure", "◆", "LangChain", "OpenAI", "Framer Motion", "Zod", "React Hook Form", "Docker", "GitHub Actions", "◆"]
+}

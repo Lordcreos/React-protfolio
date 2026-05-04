@@ -1,0 +1,189 @@
+[
+  {
+    "index": 1,
+    "imageLeft": true,
+    "year": "2023 — Present",
+    "client": "Libélula Soft",
+    "sector": "Finance",
+    "title": "A regulated finance platform, shipped with AI in the loop.",
+    "body": "Led frontend architecture for a regulated financial services platform. Integrated AI tooling (Cursor, Claude Code, Copilot) across the delivery cycle: ticket breakdown, scaffolding, PR review, automated test generation.",
+    "metrics": [
+      {
+        "n": "−30%",
+        "label": "form errors"
+      },
+      {
+        "n": "−50%",
+        "label": "regressions"
+      },
+      {
+        "n": "+25%",
+        "label": "delivery speed"
+      }
+    ],
+    "tags": [
+      "React",
+      "Next.js",
+      "RHF",
+      "Zod",
+      "Playwright",
+      "Tailwind"
+    ],
+    "image": {
+      "src": "/assets/code-laptop.png",
+      "alt": "Code editor on a translucent laptop, lit in signal orange"
+    }
+  },
+  {
+    "index": 2,
+    "imageLeft": false,
+    "year": "2023",
+    "client": "Pickatale",
+    "sector": "EdTech",
+    "title": "Modular components for thousands of young readers.",
+    "body": "Engineered modular components for an EdTech platform serving thousands of international users. Improved frontend rendering with Next.js SSR optimizations. Built serverless workflows with Azure Functions for media delivery.",
+    "metrics": [
+      {
+        "n": "+40%",
+        "label": "render speed"
+      }
+    ],
+    "tags": [
+      "Next.js",
+      "Azure Functions",
+      "Node.js"
+    ],
+    "image": null
+  },
+  {
+    "index": 3,
+    "imageLeft": true,
+    "year": "2024",
+    "client": "Self-initiated",
+    "sector": "Open-source",
+    "title": "Real-time finance dashboard, 180+ stars on GitHub.",
+    "body": "Architected a real-time financial data dashboard with WebSocket-driven charts, role-based access, audit logging. Deployed on Azure with zero-downtime CI/CD.",
+    "metrics": [
+      {
+        "n": "180★",
+        "label": "GitHub"
+      },
+      {
+        "n": "0",
+        "label": "downtime"
+      }
+    ],
+    "tags": [
+      "React",
+      "WebSockets",
+      "Node.js",
+      "Azure"
+    ],
+    "image": {
+      "src": "/assets/network.png",
+      "alt": "Network of orange nodes representing real-time data flow"
+    }
+  },
+  {
+    "index": 4,
+    "imageLeft": true,
+    "year": "2025",
+    "client": "New Client",
+    "sector": "Industry",
+    "title": "Project title.",
+    "body": "",
+    "metrics": [
+      {
+        "n": "",
+        "label": ""
+      }
+    ],
+    "tags": [],
+    "image": null
+  },
+  {
+    "index": 5,
+    "imageLeft": true,
+    "year": "2025",
+    "client": "New Client",
+    "sector": "Industry",
+    "title": "Project title.",
+    "body": "",
+    "metrics": [
+      {
+        "n": "",
+        "label": ""
+      }
+    ],
+    "tags": [],
+    "image": null
+  },
+  {
+    "index": 6,
+    "imageLeft": true,
+    "year": "2025",
+    "client": "New Client",
+    "sector": "Industry",
+    "title": "Project title.",
+    "body": "",
+    "metrics": [
+      {
+        "n": "",
+        "label": ""
+      }
+    ],
+    "tags": [],
+    "image": null
+  },
+  {
+    "index": 7,
+    "imageLeft": true,
+    "year": "2025",
+    "client": "New Client",
+    "sector": "Industry",
+    "title": "Project title.",
+    "body": "",
+    "metrics": [
+      {
+        "n": "",
+        "label": ""
+      }
+    ],
+    "tags": [],
+    "image": null
+  },
+  {
+    "index": 8,
+    "imageLeft": true,
+    "year": "2025",
+    "client": "New Client",
+    "sector": "Industry",
+    "title": "Project title.",
+    "body": "",
+    "metrics": [
+      {
+        "n": "",
+        "label": ""
+      }
+    ],
+    "tags": [],
+    "image": null
+  },
+  {
+    "index": 9,
+    "imageLeft": true,
+    "year": "2025",
+    "client": "New Client",
+    "sector": "Industry",
+    "title": "Project title.",
+    "body": "",
+    "metrics": [
+      {
+        "n": "",
+        "label": ""
+      }
+    ],
+    "tags": [],
+    "image": null
+  }
+]
