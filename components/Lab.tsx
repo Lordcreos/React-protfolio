@@ -65,7 +65,16 @@ export function Lab({ cards }: LabProps) {
         <Reveal>
           <div key={page} className="lab-cards-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32 }}>
             {shown.map((c, i) => (
-              <div key={i} className="lab-card">
+              <div key={i} className={`lab-card ${c.link?.trim() ? 'lab-card-link' : ''}`}>
+                {c.link?.trim() && (
+                  <a
+                    className="lab-card-cover-link"
+                    href={c.link.trim()}
+                    target={/^https?:\/\//i.test(c.link.trim()) ? '_blank' : undefined}
+                    rel={/^https?:\/\//i.test(c.link.trim()) ? 'noreferrer' : undefined}
+                    aria-label={`Open ${c.title}`}
+                  />
+                )}
                 <div style={{ aspectRatio: '16/9', background: 'var(--ink-3)', overflow: 'hidden', position: 'relative' }}>
                   {c.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -84,6 +93,11 @@ export function Lab({ cards }: LabProps) {
                   <h3 className="display" style={{ fontSize: 'clamp(1.4rem, 2vw, 1.9rem)', color: 'var(--bone)', margin: 0, lineHeight: 1.1 }}>{c.title}</h3>
                   <span className="arrow-up" style={{ fontSize: 22, lineHeight: 1 }}>↗</span>
                 </div>
+                {c.link?.trim() && (
+                  <div className="lab-preview-label mono">
+                    Preview available
+                  </div>
+                )}
                 <div className="mono bone-faint" style={{ fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', marginTop: 12 }}>{c.meta}</div>
                 <p className="bone-muted" style={{ fontSize: 14, lineHeight: 1.6, margin: '16px 0 0 0' }}>{c.body}</p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 24, paddingTop: 24, borderTop: '1px solid var(--hairline)' }}>

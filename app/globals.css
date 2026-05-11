@@ -113,9 +113,24 @@ a.ls-mark:hover .ls-square { transform: rotate(45deg); }
 .stack-item:hover { transform: translateX(6px); color: var(--bone); }
 
 /* Lab card */
-.lab-card { border: 1px solid var(--hairline); padding: 32px; transition: border-color 0.5s ease; cursor: pointer; }
-.lab-card:hover { border-color: var(--signal); }
-.lab-card:hover .arrow-up { color: var(--signal); transform: translate(4px, -4px); }
+.lab-card { border: 1px solid var(--hairline); padding: 32px; transition: border-color 0.5s ease; position: relative; }
+.lab-card-link { cursor: pointer; }
+.lab-card-link:hover { border-color: var(--signal); }
+.lab-card-link:hover .arrow-up { color: var(--signal); transform: translate(4px, -4px); }
+.lab-card-cover-link { position: absolute; inset: 0; z-index: 1; }
+.lab-card:focus-within { border-color: var(--signal); }
+.lab-card-cover-link:focus-visible { outline: 1px solid var(--signal); outline-offset: 4px; }
+.lab-preview-label {
+  display: inline-flex;
+  margin-top: 14px;
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 91, 31, 0.45);
+  color: var(--signal-soft);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-transform: uppercase;
+}
 .arrow-up { color: var(--bone-muted); transition: transform 0.3s ease, color 0.3s ease; }
 
 /* Service cell */
