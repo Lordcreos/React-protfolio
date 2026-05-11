@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { AdminShell } from '@/components/admin/AdminShell'
 import { SaveBar } from '@/components/admin/SaveBar'
 import { ImageUploader } from '@/components/admin/ImageUploader'
@@ -27,6 +27,8 @@ export default function LabEditor() {
   const [cards, setCards] = useState<LabCard[]>([])
   const [loading, setLoading] = useState(true)
   const [active, setActive] = useState(0)
+  const [dragOver, setDragOver] = useState<number | null>(null)
+  const dragFrom = useRef<number | null>(null)
 
   useEffect(() => {
     fetch('/api/content/lab').then((r) => r.json()).then((data) => {
@@ -56,6 +58,24 @@ export default function LabEditor() {
     setActive(Math.min(active, next.length - 1))
   }
 
+  function moveCard(from: number, to: number) {
+    if (from === to) return
+    setCards((prev) => {
+      const next = [...prev]
+      const [moved] = next.splice(from, 1)
+      next.splice(to, 0, moved)
+      return next
+    })
+    let newActive = active
+    if (from === active) {
+      newActive = to
+    } else {
+      if (from < active) newActive = active - 1
+      if (to <= newActive) newActive = newActive + 1
+    }
+    setActive(newActive)
+  }
+
   return (
     <AdminShell>
       <h1 className="admin-page-title">04 · Lab</h1>
@@ -63,7 +83,18 @@ export default function LabEditor() {
 
       <div className="admin-tabs">
         {cards.map((c, i) => (
-          <button key={i} className={`admin-tab ${i === active ? 'active' : ''}`} onClick={() => setActive(i)}>
+          <button
+            key={i}
+            draggable
+            className={`admin-tab ${i === active ? 'active' : ''}`}
+            style={{ cursor: 'grab', outline: dragOver === i && dragFrom.current !== i ? '2px solid #888' : undefined }}
+            onClick={() => setActive(i)}
+            onDragStart={() => { dragFrom.current = i }}
+            onDragOver={(e) => { e.preventDefault(); setDragOver(i) }}
+            onDragLeave={() => setDragOver(null)}
+            onDrop={() => { setDragOver(null); if (dragFrom.current !== null) moveCard(dragFrom.current, i); dragFrom.current = null }}
+            onDragEnd={() => { setDragOver(null); dragFrom.current = null }}
+          >
             {c.title.length > 22 ? c.title.slice(0, 22) + '…' : c.title}
           </button>
         ))}
