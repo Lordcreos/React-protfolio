@@ -68,6 +68,7 @@ const defaultForm: Required<ContactFormConfig> = {
 }
 
 const NETLIFY_FORM_NAME = 'service-request'
+const NETLIFY_FORM_ACTION = '/__forms.html'
 
 export function Contact({ email, location, timezone, languages, social, footerBuild, form: formConfig, serviceOptions = [] }: ContactProps) {
   const settings = { ...defaultForm, ...formConfig }
@@ -138,7 +139,7 @@ export function Contact({ email, location, timezone, languages, social, footerBu
     setSubmitMessage('')
 
     try {
-      const res = await fetch('/', {
+      const res = await fetch(NETLIFY_FORM_ACTION, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: payload.toString(),
@@ -194,7 +195,7 @@ export function Contact({ email, location, timezone, languages, social, footerBu
           </div>
         </div>
 
-        <form className="contact-form" name={NETLIFY_FORM_NAME} method="POST" data-netlify="true" onSubmit={submitContact}>
+        <form className="contact-form" name={NETLIFY_FORM_NAME} method="POST" action={NETLIFY_FORM_ACTION} data-netlify="true" onSubmit={submitContact}>
           <input type="hidden" name="form-name" value={NETLIFY_FORM_NAME} />
           <input type="hidden" name="destinationEmail" value={settings.destinationEmail || email} />
           <input type="hidden" name="subject" value={`${settings.emailSubjectPrefix}: ${form.service}`} />
