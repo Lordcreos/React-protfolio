@@ -69,6 +69,7 @@ export async function POST(req: NextRequest) {
 
   const subjectPrefix = contact.form?.emailSubjectPrefix || 'Service request'
   const subject = `${subjectPrefix}: ${service}`
+  // onboarding@resend.dev only works for the account owner's email; verify a domain at resend.com/domains to send to any recipient
   const from = process.env.RESEND_FROM_EMAIL || 'Portfolio <onboarding@resend.dev>'
   const text = [
     `Name: ${name}`,
