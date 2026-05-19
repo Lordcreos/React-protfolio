@@ -68,7 +68,7 @@ const defaultForm: Required<ContactFormConfig> = {
 }
 
 const NETLIFY_FORM_NAME = 'service-request'
-const NETLIFY_FORM_ACTION = '/__forms.html'
+const NETLIFY_FORM_ACTION = '/'
 
 export function Contact({ email, location, timezone, languages, social, footerBuild, form: formConfig, serviceOptions = [] }: ContactProps) {
   const settings = { ...defaultForm, ...formConfig }
