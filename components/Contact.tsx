@@ -124,6 +124,7 @@ export function Contact({ email, location, timezone, languages, social, footerBu
     const subject = `${settings.emailSubjectPrefix}: ${form.service}`
     const payload = new URLSearchParams({
       'form-name': NETLIFY_FORM_NAME,
+      'bot-field': '',
       name: form.name,
       email: form.replyTo,
       company: form.company || 'Not provided',
@@ -195,8 +196,9 @@ export function Contact({ email, location, timezone, languages, social, footerBu
           </div>
         </div>
 
-        <form className="contact-form" name={NETLIFY_FORM_NAME} method="POST" action={NETLIFY_FORM_ACTION} data-netlify="true" onSubmit={submitContact}>
+        <form className="contact-form" name={NETLIFY_FORM_NAME} method="POST" action={NETLIFY_FORM_ACTION} data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submitContact}>
           <input type="hidden" name="form-name" value={NETLIFY_FORM_NAME} />
+          <input type="hidden" name="bot-field" value="" />
           <input type="hidden" name="destinationEmail" value={settings.destinationEmail || email} />
           <input type="hidden" name="subject" value={`${settings.emailSubjectPrefix}: ${form.service}`} />
           <div className="form-row">
@@ -262,7 +264,9 @@ export function Contact({ email, location, timezone, languages, social, footerBu
         </form>
       </Reveal>
 
-      <form name={NETLIFY_FORM_NAME} data-netlify="true" hidden>
+      <form name={NETLIFY_FORM_NAME} data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value={NETLIFY_FORM_NAME} />
+        <input type="text" name="bot-field" />
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="text" name="company" />
