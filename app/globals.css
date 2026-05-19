@@ -291,6 +291,19 @@ a.ls-mark:hover .ls-square { transform: rotate(45deg); }
   color: var(--signal);
   background: transparent;
 }
+.contact-actions button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+  transform: none;
+}
+.contact-form-status {
+  margin: -4px 0 0 0;
+  color: var(--bone-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.contact-form-status.success { color: var(--signal-soft); }
+.contact-form-status.error { color: #ff8c7a; }
 
 /* Misc */
 .signal { color: var(--signal); }

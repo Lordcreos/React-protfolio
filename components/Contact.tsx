@@ -67,6 +67,8 @@ const defaultForm: Required<ContactFormConfig> = {
   whatsappMessagePrefix: 'Hi Leonardo, I want to request',
 }
 
+const NETLIFY_FORM_NAME = 'service-request'
+
 export function Contact({ email, location, timezone, languages, social, footerBuild, form: formConfig, serviceOptions = [] }: ContactProps) {
   const settings = { ...defaultForm, ...formConfig }
   const budgetOptions = settings.budgetOptions.length ? settings.budgetOptions : defaultForm.budgetOptions
@@ -81,6 +83,8 @@ export function Contact({ email, location, timezone, languages, social, footerBu
     timeline: timelineOptions[timelineOptions.length - 1],
     message: '',
   })
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [submitMessage, setSubmitMessage] = useState('')
 
   useEffect(() => {
     const tick = () => {
@@ -114,22 +118,41 @@ export function Contact({ email, location, timezone, languages, social, footerBu
     setForm((prev) => ({ ...prev, [field]: value }))
   }
 
-  function submitContact(event: FormEvent<HTMLFormElement>) {
+  async function submitContact(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const subject = `${settings.emailSubjectPrefix}: ${form.service}`
-    const body = [
-      `Name: ${form.name}`,
-      `Company/project: ${form.company || 'Not provided'}`,
-      `Reply email: ${form.replyTo}`,
-      `Service: ${form.service}`,
-      `Budget/rate: ${form.budget}`,
-      `Ideal timeline: ${form.timeline}`,
-      '',
-      'Message:',
-      form.message,
-    ].join('\n')
+    const payload = new URLSearchParams({
+      'form-name': NETLIFY_FORM_NAME,
+      name: form.name,
+      email: form.replyTo,
+      company: form.company || 'Not provided',
+      service: form.service,
+      budget: form.budget,
+      timeline: form.timeline,
+      message: form.message,
+      destinationEmail: settings.destinationEmail || email,
+      subject,
+    })
 
-    window.location.href = `mailto:${settings.destinationEmail || email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    setSubmitStatus('sending')
+    setSubmitMessage('')
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: payload.toString(),
+      })
+
+      if (!res.ok) throw new Error(`Request failed with status ${res.status}`)
+
+      setSubmitStatus('sent')
+      setSubmitMessage('Request sent. I will reply as soon as possible.')
+      setForm((prev) => ({ ...prev, name: '', company: '', replyTo: '', message: '' }))
+    } catch {
+      setSubmitStatus('error')
+      setSubmitMessage('The request could not be sent. Please use WhatsApp or try again.')
+    }
   }
 
   return (
@@ -171,27 +194,30 @@ export function Contact({ email, location, timezone, languages, social, footerBu
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={submitContact}>
+        <form className="contact-form" name={NETLIFY_FORM_NAME} method="POST" data-netlify="true" onSubmit={submitContact}>
+          <input type="hidden" name="form-name" value={NETLIFY_FORM_NAME} />
+          <input type="hidden" name="destinationEmail" value={settings.destinationEmail || email} />
+          <input type="hidden" name="subject" value={`${settings.emailSubjectPrefix}: ${form.service}`} />
           <div className="form-row">
             <label>
               <span>{settings.nameLabel}</span>
-              <input value={form.name} onChange={(e) => update('name', e.target.value)} required placeholder={settings.namePlaceholder} />
+              <input name="name" value={form.name} onChange={(e) => update('name', e.target.value)} required placeholder={settings.namePlaceholder} />
             </label>
             <label>
               <span>{settings.emailLabel}</span>
-              <input type="email" value={form.replyTo} onChange={(e) => update('replyTo', e.target.value)} required placeholder={settings.emailPlaceholder} />
+              <input name="email" type="email" value={form.replyTo} onChange={(e) => update('replyTo', e.target.value)} required placeholder={settings.emailPlaceholder} />
             </label>
           </div>
 
           <label>
             <span>{settings.companyLabel}</span>
-            <input value={form.company} onChange={(e) => update('company', e.target.value)} placeholder={settings.companyPlaceholder} />
+            <input name="company" value={form.company} onChange={(e) => update('company', e.target.value)} placeholder={settings.companyPlaceholder} />
           </label>
 
           <div className="form-row">
             <label>
               <span>{settings.serviceLabel}</span>
-              <select value={form.service} onChange={(e) => update('service', e.target.value)}>
+              <select name="service" value={form.service} onChange={(e) => update('service', e.target.value)}>
                 {(serviceOptions.length ? serviceOptions : ['Sales landing page', 'Web app', 'AI integrations']).map((service) => (
                   <option key={service} value={service}>{service}</option>
                 ))}
@@ -199,7 +225,7 @@ export function Contact({ email, location, timezone, languages, social, footerBu
             </label>
             <label>
               <span>{settings.budgetLabel}</span>
-              <select value={form.budget} onChange={(e) => update('budget', e.target.value)}>
+              <select name="budget" value={form.budget} onChange={(e) => update('budget', e.target.value)}>
                 {budgetOptions.map((budget) => (
                   <option key={budget} value={budget}>{budget}</option>
                 ))}
@@ -209,7 +235,7 @@ export function Contact({ email, location, timezone, languages, social, footerBu
 
           <label>
             <span>{settings.timelineLabel}</span>
-            <select value={form.timeline} onChange={(e) => update('timeline', e.target.value)}>
+            <select name="timeline" value={form.timeline} onChange={(e) => update('timeline', e.target.value)}>
               {timelineOptions.map((timeline) => (
                 <option key={timeline} value={timeline}>{timeline}</option>
               ))}
@@ -218,15 +244,34 @@ export function Contact({ email, location, timezone, languages, social, footerBu
 
           <label>
             <span>{settings.messageLabel}</span>
-            <textarea value={form.message} onChange={(e) => update('message', e.target.value)} required rows={6} placeholder={settings.messagePlaceholder} />
+            <textarea name="message" value={form.message} onChange={(e) => update('message', e.target.value)} required rows={6} placeholder={settings.messagePlaceholder} />
           </label>
 
           <div className="contact-actions">
-            <button type="submit">{settings.submitLabel}</button>
+            <button type="submit" disabled={submitStatus === 'sending'}>
+              {submitStatus === 'sending' ? 'Sending...' : settings.submitLabel}
+            </button>
             {whatsappHref && <a href={whatsappHref}>{settings.whatsappLabel}</a>}
           </div>
+          {submitMessage && (
+            <p className={`contact-form-status ${submitStatus === 'error' ? 'error' : 'success'}`}>
+              {submitMessage}
+            </p>
+          )}
         </form>
       </Reveal>
+
+      <form name={NETLIFY_FORM_NAME} data-netlify="true" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="company" />
+        <input type="text" name="service" />
+        <input type="text" name="budget" />
+        <input type="text" name="timeline" />
+        <textarea name="message" />
+        <input type="email" name="destinationEmail" />
+        <input type="text" name="subject" />
+      </form>
 
       <div style={{ marginTop: 128, paddingTop: 32, borderTop: '1px solid var(--hairline)', display: 'flex', justifyContent: 'space-between', gap: 24, flexWrap: 'wrap' }} className="mono bone-faint">
         <div style={{ fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase' }}>(c) 2026 Leonardo Sanchez - All rights reserved</div>
