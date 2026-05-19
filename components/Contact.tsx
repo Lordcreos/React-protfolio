@@ -67,9 +67,6 @@ const defaultForm: Required<ContactFormConfig> = {
   whatsappMessagePrefix: 'Hi Leonardo, I want to request',
 }
 
-const NETLIFY_FORM_NAME = 'service-request'
-const NETLIFY_FORM_ACTION = '/'
-
 export function Contact({ email, location, timezone, languages, social, footerBuild, form: formConfig, serviceOptions = [] }: ContactProps) {
   const settings = { ...defaultForm, ...formConfig }
   const budgetOptions = settings.budgetOptions.length ? settings.budgetOptions : defaultForm.budgetOptions
@@ -121,10 +118,7 @@ export function Contact({ email, location, timezone, languages, social, footerBu
 
   async function submitContact(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const subject = `${settings.emailSubjectPrefix}: ${form.service}`
-    const payload = new URLSearchParams({
-      'form-name': NETLIFY_FORM_NAME,
-      'bot-field': '',
+    const payload = {
       name: form.name,
       email: form.replyTo,
       company: form.company || 'Not provided',
@@ -132,21 +126,22 @@ export function Contact({ email, location, timezone, languages, social, footerBu
       budget: form.budget,
       timeline: form.timeline,
       message: form.message,
-      destinationEmail: settings.destinationEmail || email,
-      subject,
-    })
+    }
 
     setSubmitStatus('sending')
     setSubmitMessage('')
 
     try {
-      const res = await fetch(NETLIFY_FORM_ACTION, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: payload.toString(),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       })
 
-      if (!res.ok) throw new Error(`Request failed with status ${res.status}`)
+      if (!res.ok) {
+        const error = await res.json().catch(() => null)
+        throw new Error(error?.error || `Request failed with status ${res.status}`)
+      }
 
       setSubmitStatus('sent')
       setSubmitMessage('Request sent. I will reply as soon as possible.')
@@ -196,11 +191,7 @@ export function Contact({ email, location, timezone, languages, social, footerBu
           </div>
         </div>
 
-        <form className="contact-form" name={NETLIFY_FORM_NAME} method="POST" action={NETLIFY_FORM_ACTION} data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submitContact}>
-          <input type="hidden" name="form-name" value={NETLIFY_FORM_NAME} />
-          <input type="hidden" name="bot-field" value="" />
-          <input type="hidden" name="destinationEmail" value={settings.destinationEmail || email} />
-          <input type="hidden" name="subject" value={`${settings.emailSubjectPrefix}: ${form.service}`} />
+        <form className="contact-form" onSubmit={submitContact}>
           <div className="form-row">
             <label>
               <span>{settings.nameLabel}</span>
@@ -263,20 +254,6 @@ export function Contact({ email, location, timezone, languages, social, footerBu
           )}
         </form>
       </Reveal>
-
-      <form name={NETLIFY_FORM_NAME} data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-        <input type="hidden" name="form-name" value={NETLIFY_FORM_NAME} />
-        <input type="text" name="bot-field" />
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <input type="text" name="company" />
-        <input type="text" name="service" />
-        <input type="text" name="budget" />
-        <input type="text" name="timeline" />
-        <textarea name="message" />
-        <input type="email" name="destinationEmail" />
-        <input type="text" name="subject" />
-      </form>
 
       <div style={{ marginTop: 128, paddingTop: 32, borderTop: '1px solid var(--hairline)', display: 'flex', justifyContent: 'space-between', gap: 24, flexWrap: 'wrap' }} className="mono bone-faint">
         <div style={{ fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase' }}>(c) 2026 Leonardo Sanchez - All rights reserved</div>
