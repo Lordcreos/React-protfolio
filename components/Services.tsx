@@ -52,7 +52,7 @@ export function Services({ items }: ServicesProps) {
         <Reveal style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 64, gap: 24, flexWrap: 'wrap' }}>
           <div className="sec-label">06 / Services</div>
           <h2 className="sec-title" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', margin: 0, maxWidth: '18ch', textAlign: 'right' }}>
-            For <em style={{ fontStyle: 'italic', color: 'var(--signal)' }}>teams</em> who need shipping, not theory.
+            Services that turn ideas into <em style={{ fontStyle: 'italic', color: 'var(--signal)' }}>real requests</em>.
           </h2>
         </Reveal>
         <Reveal>
@@ -66,20 +66,20 @@ export function Services({ items }: ServicesProps) {
                   <div className="mono bone-faint" style={{ fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase' }}>{s.priceLabel}</div>
                   <div className="mono signal" style={{ fontSize: 22, marginTop: 6 }}>{s.price}</div>
                 </div>
-                <a href="#contact" className="service-apply">Apply →</a>
+                <a href="#contact" className="service-apply">Request service -&gt;</a>
               </div>
             ))}
           </div>
           {isCarousel && (
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 24, paddingTop: 24, borderTop: '1px solid var(--hairline)' }}>
               <NavBtn onClick={() => setPage(p => Math.max(0, p - 1))} disabled={page === 0}>
-                ← prev
+                &lt;- prev
               </NavBtn>
               <span className="mono bone-faint" style={{ fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase' }}>
                 [ {page + 1} / {totalPages} ]
               </span>
               <NavBtn onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))} disabled={page === totalPages - 1}>
-                next →
+                next -&gt;
               </NavBtn>
             </div>
           )}

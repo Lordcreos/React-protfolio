@@ -53,6 +53,8 @@ export default async function Home() {
         languages={(contact as { languages: string }).languages}
         social={(contact as { social: Parameters<typeof Contact>[0]['social'] }).social}
         footerBuild={(contact as { footerBuild: string }).footerBuild}
+        form={(contact as { form?: Parameters<typeof Contact>[0]['form'] }).form}
+        serviceOptions={(services as { title: string }[]).map((service) => service.title)}
       />
     </>
   )

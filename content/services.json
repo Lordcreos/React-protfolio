@@ -1,23 +1,44 @@
 [
   {
-    "label": "Engagement type",
-    "title": "Frontend Engineering Retainer",
-    "body": "Embedded as a senior IC on your React/Next.js codebase. Ship features, mentor the team, raise the bar on testing and AI workflows.",
+    "label": "Web product",
+    "title": "Sales landing page",
+    "body": "A fast, focused page built to explain your offer, earn trust, and turn visitors into qualified leads with clear calls to action.",
     "priceLabel": "Hourly rate",
-    "price": "€25 – €50 / hr"
+    "price": "EUR 25 - EUR 50 / hr"
   },
   {
-    "label": "Fixed scope · 2 weeks",
-    "title": "AI Integration Sprint",
-    "body": "2-week focused engagement: integrate Claude/OpenAI into your product surface — chat, structured outputs, agent workflows — with senior FE judgment on UX trade-offs.",
+    "label": "Professional site",
+    "title": "Portfolio or business website",
+    "body": "A polished website for presenting your brand, services, projects, proof, and contact channels with a modern Next.js experience.",
     "priceLabel": "Hourly rate",
-    "price": "€25 – €50 / hr"
+    "price": "EUR 25 - EUR 50 / hr"
   },
   {
-    "label": "Async · 2 weeks",
-    "title": "Code Review & Audit",
-    "body": "Async deep-read of your frontend codebase. Architecture, performance, AI-tooling readiness, hiring signal. Deliverable: a 20-page report with prioritized actions.",
+    "label": "Web app",
+    "title": "Dashboard or custom system",
+    "body": "Interfaces for managing clients, products, bookings, content, or internal workflows with a strong focus on speed and usability.",
     "priceLabel": "Hourly rate",
-    "price": "€25 – €50 / hr"
+    "price": "EUR 25 - EUR 50 / hr"
+  },
+  {
+    "label": "Automation",
+    "title": "AI integrations",
+    "body": "OpenAI-powered chats, smart forms, content generation, structured outputs, and workflow automations that reduce manual work.",
+    "priceLabel": "Hourly rate",
+    "price": "EUR 25 - EUR 50 / hr"
+  },
+  {
+    "label": "Ecommerce",
+    "title": "Catalog and online sales",
+    "body": "Product catalogs, sales pages, and ecommerce-ready experiences with clear product structure, quick contact, and conversion-focused UX.",
+    "priceLabel": "Hourly rate",
+    "price": "EUR 25 - EUR 50 / hr"
+  },
+  {
+    "label": "Monthly support",
+    "title": "Maintenance and improvements",
+    "body": "Ongoing support to update content, improve performance, fix issues, add sections, and keep your website running cleanly.",
+    "priceLabel": "Hourly rate",
+    "price": "EUR 25 - EUR 50 / hr"
   }
 ]

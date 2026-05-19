@@ -98,6 +98,14 @@ a .admin-card:hover {
   margin-bottom: 8px;
 }
 
+.admin-help {
+  color: #6B6862;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  margin: 8px 0 0 0;
+}
+
 .admin-input,
 .admin-textarea {
   width: 100%;
@@ -168,6 +176,20 @@ a .admin-card:hover {
   gap: 16px;
   align-items: center;
   margin-bottom: 12px;
+}
+
+.admin-social-row {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 12px;
+}
+
+.admin-social-delete {
+  height: 37px;
+  padding: 10px 14px;
+  font-size: 10px;
 }
 
 /* Item tabs navigation */
@@ -352,6 +374,15 @@ a .admin-card:hover {
 
   .admin-row {
     flex-wrap: wrap;
+  }
+
+  .admin-social-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-social-delete {
+    width: 100%;
+    justify-content: center;
   }
 
   .admin-login-box {

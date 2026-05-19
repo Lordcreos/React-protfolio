@@ -1,12 +1,37 @@
 {
   "email": "leonardosanchez4h@hotmail.com",
-  "location": "Berlin, DE · 52.52°N 13.40°E",
+  "location": "Berlin, DE - 52.52N 13.40E",
   "timezone": "Europe/Berlin",
-  "languages": "Spanish · English C1 · Deutsch A1",
+  "languages": "Spanish - English C1 - Deutsch A1",
   "social": [
     { "label": "LinkedIn", "href": "#" },
     { "label": "GitHub", "href": "#" },
-    { "label": "WhatsApp", "href": "https://api.whatsapp.com/send?phone=593992896292&text=Hola%20%2C%20He%20visto%20tu%20perfil%20y%20me%20gustaria%20...." }
+    { "label": "WhatsApp", "href": "https://api.whatsapp.com/send?phone=593992896292" }
   ],
-  "footerBuild": "Built with Next.js, TypeScript, and ✶ a lot of judgment."
+  "form": {
+    "headline": "Tell me what you need.",
+    "highlight": "website sell",
+    "intro": "Fill out the form with the basic context. I will reply with next steps, recommended scope, and an initial estimate.",
+    "sectionLabel": "07 / Request a service",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@email.com",
+    "companyLabel": "Company or project",
+    "companyPlaceholder": "Your business name",
+    "serviceLabel": "Service",
+    "budgetLabel": "Budget / rate",
+    "budgetOptions": ["To be defined", "EUR 25 - EUR 50 / hr", "Small fixed scope", "Monthly support"],
+    "timelineLabel": "Ideal timeline",
+    "timelineOptions": ["This week", "This month", "1 - 2 months", "I just want a quote"],
+    "messageLabel": "Project context",
+    "messagePlaceholder": "What do you want to sell, what problem do you need to solve, and what result are you expecting?",
+    "submitLabel": "Send request ->",
+    "whatsappLabel": "Quick WhatsApp",
+    "destinationEmail": "leonardosanchez4h@hotmail.com",
+    "whatsappHref": "https://api.whatsapp.com/send?phone=593992896292",
+    "emailSubjectPrefix": "Service request",
+    "whatsappMessagePrefix": "Hi Leonardo, I want to request"
+  },
+  "footerBuild": "Built with Next.js, TypeScript, and commercial intent."
 }

@@ -20,5 +20,6 @@
     "@types/react-dom": "^18",
     "supabase": "^2.98.0",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@11.0.9"
 }
